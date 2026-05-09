@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnswerManager : MonoBehaviour
+public class AnswerKeyManager : MonoBehaviour
 {
-    public static AnswerManager instance;
+    public static AnswerKeyManager instance;
 
     private void Awake()
     {
@@ -13,11 +13,16 @@ public class AnswerManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
+    [Header("Data")]
     [SerializeField] private List<QuestionSO> questionData;
 
+    [Header("Spawning")]
     [SerializeField] private GameObject answerKeyPrefab;
-    
+    [SerializeField] private Transform answerKeyTransform;
+
+    [Header("Searching")]
+    [SerializeField] private bool onSearching;
+
     public void GettingAnswer()
     {
         foreach (QuestionSO question in questionData)
@@ -26,12 +31,18 @@ public class AnswerManager : MonoBehaviour
             {
                 if (multipleChoice.isAnswer)
                 {
-                    Instantiate(answerKeyPrefab);
+                    Instantiate(answerKeyPrefab,answerKeyTransform);
                 }
             }
         }
     }
 
-
-
+    public void OnSearching()
+    {
+        onSearching = true;
+    }
+    public void CancelSearching()
+    {
+        onSearching = false;
+    }
 }
