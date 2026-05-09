@@ -15,7 +15,8 @@ public class AnswerKeyPrefab : MonoBehaviour
     [Header("Progress")]
     [SerializeField] private float currTime;
     [SerializeField] private float maxTime;
-    [SerializeField] private bool done;
+    [SerializeField] private bool searching = false;
+    [SerializeField] private bool done = false;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class AnswerKeyPrefab : MonoBehaviour
     }
     private void Update()
     {
-        if (!done)
+        if (!done && searching)
         {
             if (currTime > 0)
             {
@@ -34,6 +35,32 @@ public class AnswerKeyPrefab : MonoBehaviour
             {
                 done = true;
             }
+        }
+    }
+
+    public void SetUpAnswerKeyPrefab(QuestionSO x, float max)
+    {
+        questionSO = x;
+
+        maxTime = max;
+        currTime = maxTime;
+
+        index.text = questionSO.name;
+        keyAnswer.sprite = questionSO.questionSprite;
+
+        startButton.onClick.AddListener(ButtonSearching);
+    }
+
+    public void ButtonSearching()
+    {
+        if (!done)
+        {
+            if (!searching)
+            {
+                searching = true;
+            }
+            else
+                searching = false;
         }
     }
 

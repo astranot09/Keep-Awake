@@ -22,6 +22,13 @@ public class AnswerKeyManager : MonoBehaviour
 
     [Header("Searching")]
     [SerializeField] private bool onSearching;
+    [SerializeField] private float maxTime;
+
+
+    private void Start()
+    {
+        questionData = QuestionDatabase.instance.ReturnQuestionData();
+    }
 
     public void GettingAnswer()
     {

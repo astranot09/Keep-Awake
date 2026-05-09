@@ -15,4 +15,11 @@ public class QuestionDatabase : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private List<QuestionSO> questionData;
+
+
+
+    public List<QuestionSO> ReturnQuestionData()
+    {
+        return questionData;
+    }
 }
