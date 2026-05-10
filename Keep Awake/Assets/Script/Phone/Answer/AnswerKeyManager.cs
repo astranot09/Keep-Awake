@@ -15,6 +15,7 @@ public class AnswerKeyManager : MonoBehaviour
     }
     [Header("Data")]
     [SerializeField] private List<QuestionSO> questionData;
+    bool alreadySetUp;
 
     [Header("Spawning")]
     [SerializeField] private GameObject answerKeyPrefab;
@@ -24,10 +25,11 @@ public class AnswerKeyManager : MonoBehaviour
     [SerializeField] private bool onSearching;
     [SerializeField] private float maxTime;
 
-
-    private void Start()
+    public void SetUp()
     {
+        if(alreadySetUp) return;
         questionData = QuestionDatabase.instance.ReturnQuestionData();
+        GettingAnswer();
     }
 
     public void GettingAnswer()
@@ -38,18 +40,24 @@ public class AnswerKeyManager : MonoBehaviour
             {
                 if (multipleChoice.isAnswer)
                 {
-                    Instantiate(answerKeyPrefab,answerKeyTransform);
+                    GameObject x = Instantiate(answerKeyPrefab,answerKeyTransform);
+                    x.GetComponent<AnswerKeyPrefab>().SetUpAnswerKeyPrefab(question, maxTime,multipleChoice.AnswerSprite);
                 }
             }
         }
     }
 
-    public void OnSearching()
+    public void StartSearching()
     {
         onSearching = true;
     }
     public void CancelSearching()
     {
         onSearching = false;
+    }
+
+    public bool ReturnSearching()
+    {
+        return onSearching;
     }
 }

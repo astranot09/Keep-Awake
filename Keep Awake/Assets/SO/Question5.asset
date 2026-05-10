@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Question5
   m_EditorClassIdentifier: 
   questionName: 5
-  questionSprite: {fileID: 0}
+  questionSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   multipleChoiceDatas:
-  - AnswerSprite: {fileID: 0}
+  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     isAnswer: 0
-  - AnswerSprite: {fileID: 0}
+  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     isAnswer: 0
-  - AnswerSprite: {fileID: 0}
-    isAnswer: 0
-  - AnswerSprite: {fileID: 0}
+  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    isAnswer: 1
+  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     isAnswer: 0

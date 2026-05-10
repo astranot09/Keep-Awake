@@ -20,6 +20,7 @@ public class QuestionDatabase : MonoBehaviour
 
     public List<QuestionSO> ReturnQuestionData()
     {
+        Debug.Log("Hola");
         return questionData;
     }
 }

@@ -52,17 +52,15 @@ public class AnswerKeyPrefab : MonoBehaviour
         }
     }
 
-    public void SetUpAnswerKeyPrefab(QuestionSO x, float max)
+    public void SetUpAnswerKeyPrefab(QuestionSO x, float max, Sprite answerSprite)
     {
         questionSO = x;
 
         maxTime = max;
-        currTime = maxTime;
+        currTime = 0;
 
-        index.text = questionSO.name;
-        keyAnswer.sprite = questionSO.questionSprite;
-
-        startButton.onClick.AddListener(ButtonSearching);
+        index.text = x.name;
+        keyAnswer.sprite = answerSprite;
 
         ProgressTime();
         UpdateButtonSprite();
@@ -70,11 +68,30 @@ public class AnswerKeyPrefab : MonoBehaviour
 
     public void ButtonSearching()
     {
+        if (!searching && AnswerKeyManager.instance.ReturnSearching()) return;
         if (!done)
         {
-            searching = !searching;
+            if (!searching && !AnswerKeyManager.instance.ReturnSearching())
+            {
+                searching = true;
+                AnswerKeyManager.instance.StartSearching();
+            }
+            else if (searching)
+            {
+                searching = false;
+                AnswerKeyManager.instance.CancelSearching();
+            }
+            else
+            {
+                done = true;
+                searching = false;
 
-            UpdateButtonSprite();
+                AnswerKeyManager.instance.CancelSearching();
+
+                keyAnswer.color = Color.white;
+
+                UpdateButtonSprite();
+            }
         }
     }
 
