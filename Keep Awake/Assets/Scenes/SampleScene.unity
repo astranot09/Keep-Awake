@@ -1892,12 +1892,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: {fileID: 492321636}
-  progressBar: {fileID: 0}
+  progressBar: {fileID: 1664052893}
   startButton: {fileID: 2108770554}
-  keyAnswer: {fileID: 1140016520}
-  questionSO: {fileID: 0}
+  keyAnswer: {fileID: 1091046266}
+  questionSO: {fileID: 11400000, guid: cd10f495f55691142a03b0595271f597, type: 2}
+  playSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  pauseSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  doneSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   currTime: 0
-  maxTime: 0
+  maxTime: 10
   searching: 0
   done: 0
 --- !u!1 &538353787
@@ -2092,7 +2095,7 @@ RectTransform:
   m_Father: {fileID: 2062864143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2925,7 +2928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1140016517
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5072,7 +5075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1973492123
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5356,7 +5359,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2108770555}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 531640244}
+        m_TargetAssemblyTypeName: AnswerKeyPrefab, Assembly-CSharp
+        m_MethodName: ButtonSearching
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2108770555
 MonoBehaviour:
   m_ObjectHideFlags: 0

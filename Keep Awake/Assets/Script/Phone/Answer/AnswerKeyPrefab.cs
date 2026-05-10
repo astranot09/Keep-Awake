@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class AnswerKeyPrefab : MonoBehaviour
 {
     [Header("Setup")]
@@ -12,6 +13,11 @@ public class AnswerKeyPrefab : MonoBehaviour
 
     public QuestionSO questionSO;
 
+    [Header("Button Sprites")]
+    [SerializeField] private Sprite playSprite;
+    [SerializeField] private Sprite pauseSprite;
+    [SerializeField] private Sprite doneSprite;
+
     [Header("Progress")]
     [SerializeField] private float currTime;
     [SerializeField] private float maxTime;
@@ -20,20 +26,28 @@ public class AnswerKeyPrefab : MonoBehaviour
 
     private void Start()
     {
-        keyAnswer.enabled = false;
+        keyAnswer.color = Color.black;
+
+        UpdateButtonSprite();
     }
+
     private void Update()
     {
         if (!done && searching)
         {
-            if (currTime > 0)
+            if (currTime < maxTime)
             {
-                currTime -= Time.deltaTime;
+                currTime += Time.deltaTime;
                 ProgressTime();
             }
             else
             {
                 done = true;
+                searching = false;
+
+                keyAnswer.color = Color.white;
+
+                UpdateButtonSprite();
             }
         }
     }
@@ -49,18 +63,18 @@ public class AnswerKeyPrefab : MonoBehaviour
         keyAnswer.sprite = questionSO.questionSprite;
 
         startButton.onClick.AddListener(ButtonSearching);
+
+        ProgressTime();
+        UpdateButtonSprite();
     }
 
     public void ButtonSearching()
     {
         if (!done)
         {
-            if (!searching)
-            {
-                searching = true;
-            }
-            else
-                searching = false;
+            searching = !searching;
+
+            UpdateButtonSprite();
         }
     }
 
@@ -68,5 +82,23 @@ public class AnswerKeyPrefab : MonoBehaviour
     {
         progressBar.maxValue = maxTime;
         progressBar.value = currTime;
+    }
+
+    private void UpdateButtonSprite()
+    {
+        Image buttonImage = startButton.image;
+
+        if (done)
+        {
+            buttonImage.sprite = doneSprite;
+        }
+        else if (searching)
+        {
+            buttonImage.sprite = pauseSprite;
+        }
+        else
+        {
+            buttonImage.sprite = playSprite;
+        }
     }
 }
