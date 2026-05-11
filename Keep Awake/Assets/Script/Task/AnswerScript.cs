@@ -1,30 +1,44 @@
-using Unity.VisualScripting;
+
+
 using UnityEngine;
 using UnityEngine.UI;
+
 public class AnswerScript : MonoBehaviour
 {
     [SerializeField] private Button answerButton;
     [SerializeField] private Image answerImage;
 
-    public void SetUp(bool x, Sprite y)
+    private Color defaultColor = Color.white;
+    private Color selectedColor = Color.grey;
+
+    private TaskPrefab taskPrefab;
+
+    public bool isCorrect;
+
+    public void SetUp(bool x, Sprite y, TaskPrefab parent)
     {
+        isCorrect = x;
+
+        taskPrefab = parent;
+
         answerImage.sprite = y;
+
         answerButton.onClick.RemoveAllListeners();
-        if (x)
-            answerButton.onClick.AddListener(CorrectAnswer);
-        else
-            answerButton.onClick.AddListener(WrongAnswer);
+        answerButton.onClick.AddListener(SelectAnswer);
     }
 
-    public void CorrectAnswer()
+    public void SelectAnswer()
     {
-        Debug.Log("Bener");
-        answerImage.color = Color.grey;
+        taskPrefab.SelectAnswer(this);
     }
 
-    public void WrongAnswer()
+    public void Select()
     {
-        Debug.Log("Salah");
-        answerImage.color = Color.grey;
+        answerImage.color = selectedColor;
+    }
+
+    public void Deselect()
+    {
+        answerImage.color = defaultColor;
     }
 }

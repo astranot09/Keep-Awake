@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class TaskManager : MonoBehaviour
     [Header("Panel")]
     [SerializeField] private GameObject taskPrefab;
     [SerializeField] private Transform taskTransform;
+
+    [Header("ListJawaban")]
+    [SerializeField] private List<TaskPrefab> finalAnswerScript;
 
     public void SetUp()
     {
@@ -28,6 +32,7 @@ public class TaskManager : MonoBehaviour
         {
             GameObject x = Instantiate(taskPrefab,taskTransform);
             x.GetComponent<TaskPrefab>().SetUp(question);
+            finalAnswerScript.Add(x.GetComponent<TaskPrefab>());
         }
     }
 
@@ -36,6 +41,17 @@ public class TaskManager : MonoBehaviour
     {
         taskPanel.SetActive(!taskPanel.activeSelf);
         SetUp();
+    }
+
+    public void SubmitAnswer()
+    {
+        foreach(TaskPrefab x in finalAnswerScript)
+        {
+            if (x.isCorrect)
+            {
+                GameManager.instance.score++;
+            }
+        }
     }
 
 
