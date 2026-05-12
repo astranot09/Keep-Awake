@@ -16,7 +16,17 @@ public class AwakeBar : MonoBehaviour
     [SerializeField] private float maxTime;
 
     private bool isRunning = true;
-    void Start()
+
+
+    private void OnEnable()
+    {
+        GameManager.OnStart += SetUpAwakeBar;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= SetUpAwakeBar;
+    }
+    private void SetUpAwakeBar()
     {
         currTime = maxTime;
     }
@@ -34,6 +44,7 @@ public class AwakeBar : MonoBehaviour
             {
                 isRunning = false;
                 currTime = 0;
+                GameManager.instance.Finish();
             }
             UIManager.instance.UpdateAwakeBarUI(currTime, maxTime);
         }

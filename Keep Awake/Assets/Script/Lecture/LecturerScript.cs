@@ -17,11 +17,21 @@ public class LecturerScript : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void OnEnable()
+    {
+        GameManager.OnStart += LectureSetUp;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= LectureSetUp;
+    }
+
+    private void LectureSetUp()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         StartCoroutine(TeachingState());
     }
+
 
     private IEnumerator TeachingState()
     {

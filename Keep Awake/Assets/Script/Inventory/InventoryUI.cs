@@ -16,10 +16,15 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform content;
     [SerializeField] private GameObject itemPrefab;
 
-    private void Start()
+    private void OnEnable()
     {
-        RefreshUI();
+        GameManager.OnStart += RefreshUI;
     }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= RefreshUI;
+    }
+    
 
     public void RefreshUI()
     {

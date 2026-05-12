@@ -12,10 +12,6 @@ public class PhoneScript : MonoBehaviour
     [Header("Phone")]
     [SerializeField] private GameObject phonePanel;
 
-    private void Start()
-    {
-        OpenPanel(homePagePanel);
-    }
 
     public void OpenScrolling()
     {

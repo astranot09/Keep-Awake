@@ -14,10 +14,15 @@ public class FriendManager : MonoBehaviour
     [SerializeField] private int gachaRate = 25;
 
     [SerializeField] private ItemSO item;
+    
 
-    private void Start()
+    private void OnEnable()
     {
-        ResetTrigger();
+        GameManager.OnStart += ResetTrigger;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= ResetTrigger;
     }
 
     private void Update()

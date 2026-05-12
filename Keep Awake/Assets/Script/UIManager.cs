@@ -17,6 +17,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private Slider awakeBar;
 
+    [Header("Lose")]
+    [SerializeField] private GameObject finishPanel;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text finalTimeText;
+
 
 
     public void UpdateTimerUI(float currTime)
@@ -31,4 +36,12 @@ public class UIManager : MonoBehaviour
         awakeBar.value = currTime;
         awakeBar.maxValue = maxTime;
     }
+
+    public void FinishSetUp(int score, float time)
+    {
+        finishPanel.SetActive(true);
+        scoreText.text = $"SCORE : {score.ToString()}";
+        finalTimeText.text = $"REMAINING TIME : {time.ToString()}";
+    }
+
 }

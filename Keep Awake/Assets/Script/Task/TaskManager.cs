@@ -5,6 +5,26 @@ using UnityEngine.UI;
 public class TaskManager : MonoBehaviour
 {
 
+    public static TaskManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+    
+    private void OnEnable()
+    {
+        GameManager.OnStart += SetUpTask;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnStart -= SetUpTask;
+    }
+
     [SerializeField] private GameObject taskPanel;
 
     [Header("Data")]
@@ -18,7 +38,7 @@ public class TaskManager : MonoBehaviour
     [Header("ListJawaban")]
     [SerializeField] private List<TaskPrefab> finalAnswerScript;
 
-    public void SetUp()
+    public void SetUpTask()
     {
         if (alreadySetUp) return;
         alreadySetUp = true;
@@ -40,7 +60,7 @@ public class TaskManager : MonoBehaviour
     public void OpenTask()
     {
         taskPanel.SetActive(!taskPanel.activeSelf);
-        SetUp();
+        SetUpTask();
     }
 
     public void SubmitAnswer()
@@ -49,7 +69,7 @@ public class TaskManager : MonoBehaviour
         {
             if (x.isCorrect)
             {
-                GameManager.instance.score++;
+                GameManager.instance.AddScore(1);
             }
         }
     }

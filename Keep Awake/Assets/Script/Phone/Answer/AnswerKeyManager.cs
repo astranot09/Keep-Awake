@@ -13,6 +13,7 @@ public class AnswerKeyManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
     [Header("Data")]
     [SerializeField] private List<QuestionSO> questionData;
     bool alreadySetUp;
@@ -24,6 +25,16 @@ public class AnswerKeyManager : MonoBehaviour
     [Header("Searching")]
     [SerializeField] private bool onSearching;
     [SerializeField] private float maxTime;
+
+
+    private void OnEnable()
+    {
+        GameManager.OnStart += SetUp;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= SetUp;
+    }
 
     public void SetUp()
     {
