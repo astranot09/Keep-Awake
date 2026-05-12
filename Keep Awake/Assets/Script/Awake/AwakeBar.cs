@@ -1,6 +1,17 @@
 using UnityEngine;
 public class AwakeBar : MonoBehaviour
 {
+
+    public static AwakeBar instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     [SerializeField] private float currTime;
     [SerializeField] private float maxTime;
 
@@ -28,9 +39,15 @@ public class AwakeBar : MonoBehaviour
         }
     }
 
-    public void AddAwake()
+    public void AddAwake(float x)
     {
-
+        currTime += Time.deltaTime * x;
+        if(currTime>maxTime)
+            currTime = maxTime;
+    }
+    public void MinesAwake(float x)
+    {
+        currTime -= Time.deltaTime * x;
     }
 
 }
