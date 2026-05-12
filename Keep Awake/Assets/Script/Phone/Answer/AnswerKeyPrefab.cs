@@ -47,6 +47,7 @@ public class AnswerKeyPrefab : MonoBehaviour
 
                 keyAnswer.color = Color.white;
 
+                AnswerKeyManager.instance.CancelSearching();
                 UpdateButtonSprite();
             }
         }
@@ -80,17 +81,6 @@ public class AnswerKeyPrefab : MonoBehaviour
             {
                 searching = false;
                 AnswerKeyManager.instance.CancelSearching();
-            }
-            else
-            {
-                done = true;
-                searching = false;
-
-                AnswerKeyManager.instance.CancelSearching();
-
-                keyAnswer.color = Color.white;
-
-                UpdateButtonSprite();
             }
         }
     }

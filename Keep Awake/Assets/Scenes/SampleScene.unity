@@ -643,6 +643,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 981642403}
+        m_TargetAssemblyTypeName: DoomScrollingScript, Assembly-CSharp
+        m_MethodName: DoomScrolling
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &299921366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2660,6 +2672,7 @@ GameObject:
   - component: {fileID: 981642401}
   - component: {fileID: 981642400}
   - component: {fileID: 981642399}
+  - component: {fileID: 981642403}
   m_Layer: 5
   m_Name: ContentScrolling
   m_TagString: Untagged
@@ -2770,6 +2783,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981642397}
   m_CullTransparentMesh: 1
+--- !u!114 &981642403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981642397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114738fd4b588594296618fe0e50cb98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDoomScrolling: 0
+  addAwake: 2
 --- !u!1 &987634521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3143,7 +3170,6 @@ GameObject:
   - component: {fileID: 1140016521}
   - component: {fileID: 1140016520}
   - component: {fileID: 1140016519}
-  - component: {fileID: 1140016522}
   m_Layer: 5
   m_Name: ContentKeyAnswer
   m_TagString: Untagged
@@ -3240,23 +3266,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140016516}
   m_CullTransparentMesh: 1
---- !u!114 &1140016522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140016516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 672a95b716404e042b84226bafe9614e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questionData: []
-  answerKeyPrefab: {fileID: 8020107922276678345, guid: 6a76a6272ef092c459551e12c606d5b5, type: 3}
-  answerKeyTransform: {fileID: 962206653}
-  onSearching: 0
-  maxTime: 10
 --- !u!1 &1153114161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,6 +3578,18 @@ MonoBehaviour:
       - m_Target: {fileID: 440191796}
         m_TargetAssemblyTypeName: PhoneScript, Assembly-CSharp
         m_MethodName: OpenHomePage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 981642403}
+        m_TargetAssemblyTypeName: DoomScrollingScript, Assembly-CSharp
+        m_MethodName: CloseDoomScrolling
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5502,6 +5523,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886913919}
   m_CullTransparentMesh: 1
+--- !u!1 &1907317716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907317718}
+  - component: {fileID: 1907317717}
+  m_Layer: 0
+  m_Name: AnswerKeyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1907317717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907317716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672a95b716404e042b84226bafe9614e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionData: []
+  answerKeyPrefab: {fileID: 8020107922276678345, guid: 6a76a6272ef092c459551e12c606d5b5, type: 3}
+  answerKeyTransform: {fileID: 962206653}
+  onSearching: 0
+  maxTime: 10
+--- !u!4 &1907317718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907317716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1099.7151, y: 834.41656, z: 16.925325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950109340
 GameObject:
   m_ObjectHideFlags: 0
@@ -5688,6 +5758,7 @@ MonoBehaviour:
   maxTrigger: 10
   currTrigger: 0
   gachaRate: 21
+  item: {fileID: 0}
 --- !u!212 &2028621017
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6004,3 +6075,4 @@ SceneRoots:
   - {fileID: 1259886659}
   - {fileID: 2028621018}
   - {fileID: 836846713}
+  - {fileID: 1907317718}

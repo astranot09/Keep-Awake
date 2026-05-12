@@ -13,6 +13,8 @@ public class FriendManager : MonoBehaviour
     [Range(0, 100)]
     [SerializeField] private int gachaRate = 25;
 
+    [SerializeField] private ItemSO item;
+
     private void Start()
     {
         ResetTrigger();
@@ -57,6 +59,7 @@ public class FriendManager : MonoBehaviour
 
         if (roll < gachaRate)
         {
+            InventoryManager.instance.AddItem(item);
             Debug.Log("Dapet Item");
         }
         else
