@@ -50,4 +50,11 @@ public class AwakeBar : MonoBehaviour
         currTime -= Time.deltaTime * x;
     }
 
+    public void AddAwakeInstan(float x)
+    {
+        currTime +=  x;
+        if (currTime > maxTime)
+            currTime = maxTime;
+    }
+
 }
