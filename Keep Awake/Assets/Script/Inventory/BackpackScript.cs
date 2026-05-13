@@ -10,11 +10,13 @@ public class BackpackScript : MonoBehaviour
         if (inventoryPanel.activeSelf)
         {
             Debug.Log("Buka tas");
+            SoundManager.instance.PlaySFX(SoundManager.instance.zipperOpen);
             //mainin suara buka
         }
         else
         {
             Debug.Log("Tutup tas");
+            SoundManager.instance.PlaySFX(SoundManager.instance.zipperClose);
             //mainin suara tutup
         }
     }

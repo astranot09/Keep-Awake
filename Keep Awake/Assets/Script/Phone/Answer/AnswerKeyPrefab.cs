@@ -101,7 +101,7 @@ public class AnswerKeyPrefab : MonoBehaviour
         }
         else if (searching)
         {
-            buttonImage.sprite = pauseSprite;
+            buttonImage.sprite = pauseSprite;            
         }
         else
         {

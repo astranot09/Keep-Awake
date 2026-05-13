@@ -59,7 +59,18 @@ public class TaskManager : MonoBehaviour
 
     public void OpenTask()
     {
-        taskPanel.SetActive(!taskPanel.activeSelf);
+        if (Player.instance.ReturnOpenUI() && !taskPanel.activeSelf) return;
+        if (taskPanel.activeSelf)
+        {
+            taskPanel.SetActive(false);
+            Player.instance.CloseUI();
+        }
+        else if (!taskPanel.activeSelf)
+        {
+            taskPanel.SetActive(true);
+            Player.instance.OpenUI();
+        }
+
         SetUpTask();
     }
 

@@ -1,0 +1,51 @@
+using UnityEngine;
+using Unity.Cinemachine;
+public class CameraManager : MonoBehaviour
+{
+    public static CameraManager instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    [Header("Virtual Camera")]
+    [SerializeField] private CinemachineCamera cinemachineCamera;
+
+    [Header("Targets")]
+    [SerializeField] private Transform scene1;
+    [SerializeField] private Transform scene2;
+
+    [Header("ButtonUI")]
+    [SerializeField] private GameObject buttonScene1;
+    [SerializeField] private GameObject buttonScene2;
+
+
+    private void Start()
+    {
+        FollowScene1();
+    }
+    public void FollowScene1()
+    {
+        cinemachineCamera.Follow = scene1;
+        buttonScene1.SetActive(true);
+        buttonScene2.SetActive(false);
+        Player.instance.CloseUI();
+        Player.instance.OnConcetrate();
+        FriendManager.instance.StopTalking();
+    }
+
+    public void FollowScene2()
+    {
+        if(Player.instance.ReturnOpenUI()) return;
+        cinemachineCamera.Follow = scene2;
+        buttonScene2.SetActive(true);
+        buttonScene1.SetActive(false);
+        Player.instance.OpenUI();
+        Player.instance.NotConcetrate();
+        FriendManager.instance.TalkToFriend();
+    }
+}

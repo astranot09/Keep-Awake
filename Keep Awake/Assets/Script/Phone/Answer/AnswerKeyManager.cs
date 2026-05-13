@@ -61,10 +61,12 @@ public class AnswerKeyManager : MonoBehaviour
     public void StartSearching()
     {
         onSearching = true;
+        SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
     }
     public void CancelSearching()
     {
         onSearching = false;
+        SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
     }
 
     public bool ReturnSearching()

@@ -57,7 +57,7 @@ public class TaskPrefab : MonoBehaviour
         {
             answer.Deselect();
         }
-
+        SoundManager.instance.PlaySFX(SoundManager.instance.pencil);
         // pilih baru
         selected.Select();
 

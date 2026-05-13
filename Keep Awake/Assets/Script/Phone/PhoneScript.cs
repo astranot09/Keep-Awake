@@ -40,7 +40,20 @@ public class PhoneScript : MonoBehaviour
     }
     public void Phone()
     {
-        phonePanel.SetActive(!phonePanel.activeSelf);
+        if (Player.instance.ReturnOpenUI() && !phonePanel.activeSelf) return;
+
+        if (phonePanel.activeSelf)
+        {
+            phonePanel.SetActive(false);
+            Player.instance.CloseUI();
+            Player.instance.OnConcetrate();
+        }
+        else if (!phonePanel.activeSelf)
+        {
+            phonePanel.SetActive(true);
+            Player.instance.OpenUI();
+            Player.instance.NotConcetrate();
+        }
     }
 
 
@@ -55,5 +68,6 @@ public class PhoneScript : MonoBehaviour
 
         // nyalain target
         targetPanel.SetActive(true);
+        SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
     }
 }

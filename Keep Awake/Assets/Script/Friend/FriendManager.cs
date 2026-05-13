@@ -2,6 +2,19 @@ using UnityEngine;
 
 public class FriendManager : MonoBehaviour
 {
+
+    public static FriendManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+
+
     public bool isTalking = false;
 
     [Header("Giving Item")]
