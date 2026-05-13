@@ -15,7 +15,7 @@ public class AwakeBar : MonoBehaviour
     [SerializeField] private float currTime;
     [SerializeField] private float maxTime;
 
-    private bool isRunning = true;
+    private bool isRunning = false;
 
 
     private void OnEnable()
@@ -29,6 +29,7 @@ public class AwakeBar : MonoBehaviour
     private void SetUpAwakeBar()
     {
         currTime = maxTime;
+        isRunning = true;
     }
 
     // Update is called once per frame

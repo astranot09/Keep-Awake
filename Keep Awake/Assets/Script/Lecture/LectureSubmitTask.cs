@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class LectureSubmitTask : MonoBehaviour
 {
+
     private void OnMouseDown()
     {
-        TaskManager.instance.SubmitAnswer();
+        UIManager.instance.OpenSubmitPanel();
+    }
+
+    public void SubmitAnswer()
+    {
+        //TaskManager.instance.SubmitAnswer();
+        GameManager.instance.Finish();
     }
 }

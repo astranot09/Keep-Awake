@@ -24,10 +24,16 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject buttonScene2;
 
 
-    private void Start()
+    private void OnEnable()
     {
-        FollowScene1();
+        GameManager.OnStart += FollowScene1;
     }
+
+    private void OnDisable()
+    {
+        GameManager.OnStart -= FollowScene1;
+    }
+
     public void FollowScene1()
     {
         cinemachineCamera.Follow = scene1;

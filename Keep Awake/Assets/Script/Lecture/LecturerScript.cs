@@ -142,6 +142,15 @@ public class LecturerScript : MonoBehaviour
 
             yield return new WaitForSeconds(teachingDelay);
 
+
+            // ====================
+            // LOOKING STATE
+            // ====================
+
+
+            spriteRenderer.color = Color.yellow;
+            yield return new WaitForSeconds(1f);
+
             // ====================
             // LOOKING STATE
             // ====================
@@ -164,6 +173,7 @@ public class LecturerScript : MonoBehaviour
                 {
                     LectureAngry();
 
+                    yield return new WaitForSeconds(1f);
                     // langsung balik ke teaching
                     break;
                 }

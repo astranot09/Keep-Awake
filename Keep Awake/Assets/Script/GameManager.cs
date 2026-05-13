@@ -18,11 +18,12 @@ public class GameManager : MonoBehaviour
 
     public static Action OnStart;
 
+    public bool onGame = false;
 
     private void Start()
     {
         //Sementara
-        GameStart();
+        //GameStart();
     }
 
     public void AddScore(int x)
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
+        onGame = true;
         OnStart?.Invoke();
     }
 

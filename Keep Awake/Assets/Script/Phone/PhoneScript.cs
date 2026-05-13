@@ -40,6 +40,7 @@ public class PhoneScript : MonoBehaviour
     }
     public void Phone()
     {
+        if (!GameManager.instance.onGame) return;
         if (Player.instance.ReturnOpenUI() && !phonePanel.activeSelf) return;
 
         if (phonePanel.activeSelf)
@@ -70,4 +71,21 @@ public class PhoneScript : MonoBehaviour
         targetPanel.SetActive(true);
         SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
     }
+
+
+
+
+
+
+
+
+    private void OnMouseDown()
+    {
+        Phone();
+    }
+
+
+
+
+
 }
