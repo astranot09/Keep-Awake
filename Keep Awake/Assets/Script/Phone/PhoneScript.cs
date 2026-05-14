@@ -84,8 +84,4 @@ public class PhoneScript : MonoBehaviour
         Phone();
     }
 
-
-
-
-
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 public class AwakeBar : MonoBehaviour
 {
 
@@ -16,6 +17,10 @@ public class AwakeBar : MonoBehaviour
     [SerializeField] private float maxTime;
 
     private bool isRunning = false;
+
+
+    [Header("Timeline")]
+    [SerializeField] private PlayableDirector sleepTimeline;
 
 
     private void OnEnable()
@@ -45,7 +50,7 @@ public class AwakeBar : MonoBehaviour
             {
                 isRunning = false;
                 currTime = 0;
-                GameManager.instance.Finish();
+                TimelineManager.instance.PlayTimeline(sleepTimeline);
             }
             UIManager.instance.UpdateAwakeBarUI(currTime, maxTime);
         }

@@ -41,10 +41,13 @@ public class GameManager : MonoBehaviour
         time = TimerManager.instance.ReturnTime();
         TaskManager.instance.SubmitAnswer();
         UIManager.instance.FinishSetUp(score,time);
+        Debug.Log("ppp");
     }
 
     public void GameStart()
     {
+        SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
+        UIManager.instance.CloseMainMenuPanel();
         onGame = true;
         OnStart?.Invoke();
     }

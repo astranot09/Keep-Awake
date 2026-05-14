@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class ButtonManager : MonoBehaviour
 {
+
     public void StartGame()
     {
-        SoundManager.instance.PlaySFX(SoundManager.instance.phoneTap);
-        GameManager.instance.GameStart();
+        MainMenuScript.instance.PlayTimeline();
     }
     public void RestartGame()
     {
