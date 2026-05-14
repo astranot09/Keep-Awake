@@ -31,6 +31,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel;
 
 
+    [SerializeField] private GameObject mainMenuConfirmation;
+
+
+
     public void CloseMainMenuPanel()
     {
         mainMenuPanel.SetActive(false);
@@ -67,7 +71,15 @@ public class UIManager : MonoBehaviour
         Player.instance.CloseUI();
     }
 
+    public void OpenConfirmationMainMenuPanel()
+    {
+        mainMenuConfirmation.SetActive(true);
+    }
 
+    public void CloseConfirmationMainMenuPanel()
+    {
+        mainMenuConfirmation.SetActive(false);
+    }
 
 
 
