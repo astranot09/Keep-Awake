@@ -4,7 +4,7 @@ public class BackpackScript : MonoBehaviour
 {
     public GameObject inventoryPanel;
 
-    public void BackpackInteract()
+    public void OnMouseDown()
     {
         if (Player.instance.ReturnOpenUI() && !inventoryPanel.activeSelf) return;
 

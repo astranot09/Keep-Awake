@@ -18,6 +18,11 @@ public class ItemScript : MonoBehaviour
         // Pakai item
         AwakeBar.instance.AddAwakeInstan(itemSO.addAwake);
 
+        if (itemSO.itemName == "Cofee")
+        {
+            SoundManager.instance.PlaySFX(SoundManager.instance.drinkCofee);
+        }
+
         // Hapus dari inventory
         InventoryManager.instance.RemoveItem(itemSO);
 

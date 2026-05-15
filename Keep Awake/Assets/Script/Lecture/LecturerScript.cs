@@ -1,85 +1,3 @@
-//using System.Collections;
-//using UnityEngine;
-
-//public class LecturerScript : MonoBehaviour
-//{
-//    [Header("Teaching")]
-//    [SerializeField] private float minTeachingDelay = 3f;
-//    [SerializeField] private float maxTeachingDelay = 7f;
-
-//    [Header("Looking")]
-//    [SerializeField] private float minLookingDelay = 2f;
-//    [SerializeField] private float maxLookingDelay = 4f;
-
-//    [Header("State")]
-//    [SerializeField] private bool isTeaching;
-//    [SerializeField] private bool isLooking;
-
-//    private SpriteRenderer spriteRenderer;
-
-//    private void OnEnable()
-//    {
-//        GameManager.OnStart += LectureSetUp;
-//    }
-//    private void OnDisable()
-//    {
-//        GameManager.OnStart -= LectureSetUp;
-//    }
-
-//    private void LectureSetUp()
-//    {
-//        spriteRenderer = GetComponent<SpriteRenderer>();
-//        StartCoroutine(TeachingState());
-//    }
-
-
-//    private IEnumerator TeachingState()
-//    {
-//        isTeaching = true;
-//        isLooking = false;
-
-//        float delay = Random.Range(minTeachingDelay, maxTeachingDelay);
-
-//        Debug.Log("Guru mengajar");
-//        spriteRenderer.color = Color.white;
-
-//        yield return new WaitForSeconds(delay);
-
-//        StartCoroutine(LookingState());
-//    }
-
-//    private IEnumerator LookingState()
-//    {
-//        isTeaching = false;
-//        isLooking = true;
-
-//        float delay = Random.Range(minLookingDelay, maxLookingDelay);
-
-//        Debug.Log("Guru nengok");
-//        spriteRenderer.color = Color.red;
-
-//        float timer = 0f;
-
-//        while (timer < delay)
-//        {
-//            if (!Player.instance.ReturnConcetrate())
-//            {
-//                Debug.Log("Ketahuan");
-
-//                StartCoroutine(TeachingState());
-
-//                yield break;
-//            }
-
-//            timer += Time.deltaTime;
-
-//            yield return null;
-//        }
-
-//        StartCoroutine(TeachingState());
-//    }
-//}
-
 using System.Collections;
 using UnityEngine;
 
@@ -101,6 +19,9 @@ public class LecturerScript : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Coroutine lectureCoroutine;
+
+    [Header("Notification")]
+    [SerializeField] private GameObject lectureNotification;
 
     private void OnEnable()
     {
@@ -137,6 +58,8 @@ public class LecturerScript : MonoBehaviour
             Debug.Log("Guru mengajar");
 
             spriteRenderer.color = Color.white;
+            lectureNotification.SetActive(false);
+
 
             float teachingDelay = Random.Range(minTeachingDelay, maxTeachingDelay);
 
@@ -144,12 +67,15 @@ public class LecturerScript : MonoBehaviour
 
 
             // ====================
-            // LOOKING STATE
+            // OTW NENGOK STATE
             // ====================
 
 
             spriteRenderer.color = Color.yellow;
+            lectureNotification.SetActive(true);
+
             yield return new WaitForSeconds(1f);
+
 
             // ====================
             // LOOKING STATE
@@ -172,8 +98,9 @@ public class LecturerScript : MonoBehaviour
                 if (!Player.instance.ReturnConcetrate())
                 {
                     LectureAngry();
+                    SoundManager.instance.PlaySFX(SoundManager.instance.tableSlap);
 
-                    yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(0.3f);
                     // langsung balik ke teaching
                     break;
                 }

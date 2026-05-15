@@ -37,6 +37,7 @@ public class TaskManager : MonoBehaviour
 
     [Header("ListJawaban")]
     [SerializeField] private List<TaskPrefab> finalAnswerScript;
+    [SerializeField] private RectTransform contentParent;
 
     public void SetUpTask()
     {
@@ -52,6 +53,7 @@ public class TaskManager : MonoBehaviour
         {
             GameObject x = Instantiate(taskPrefab,taskTransform);
             x.GetComponent<TaskPrefab>().SetUp(question);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(contentParent);
             finalAnswerScript.Add(x.GetComponent<TaskPrefab>());
         }
     }
@@ -67,6 +69,7 @@ public class TaskManager : MonoBehaviour
         }
         else if (!taskPanel.activeSelf)
         {
+            SoundManager.instance.PlaySFX(SoundManager.instance.pickUpPaper);
             taskPanel.SetActive(true);
             Player.instance.OpenUI();
         }

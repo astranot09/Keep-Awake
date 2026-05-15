@@ -10,6 +10,7 @@ public class AnswerKeyPrefab : MonoBehaviour
     public Button startButton;
 
     public Image keyAnswer;
+    public GameObject keyAnswerBloker;
 
     public QuestionSO questionSO;
 
@@ -46,6 +47,7 @@ public class AnswerKeyPrefab : MonoBehaviour
                 searching = false;
 
                 keyAnswer.color = Color.white;
+                Destroy(keyAnswerBloker);
 
                 AnswerKeyManager.instance.CancelSearching();
                 UpdateButtonSprite();

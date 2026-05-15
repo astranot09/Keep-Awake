@@ -21,7 +21,7 @@ public class TaskPrefab : MonoBehaviour
     private AnswerScript currentSelected;
 
     public bool isCorrect = false;
-
+    [SerializeField] private RectTransform contentParent;
     public void SetUp(QuestionSO questionSO)
     {
         data = questionSO;
@@ -45,7 +45,7 @@ public class TaskPrefab : MonoBehaviour
                 multipleChoice.AnswerSprite,
                 this
             );
-
+            LayoutRebuilder.ForceRebuildLayoutImmediate(contentParent);
             answers.Add(answer);
         }
     }

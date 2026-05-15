@@ -24,6 +24,10 @@ public class SoundManager : MonoBehaviour
     public AudioClip zipperOpen;
     public AudioClip zipperClose;
 
+    public AudioClip drinkCofee;
+    public AudioClip pickUpPaper;
+    public AudioClip tableSlap;
+
     private void Start()
     {
         PlayBGM(bgmSound);

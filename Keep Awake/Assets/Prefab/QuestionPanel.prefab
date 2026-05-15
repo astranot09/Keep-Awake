@@ -99,6 +99,7 @@ MonoBehaviour:
   answerPrefab: {fileID: 8004847129725404374, guid: 8edb8f9e12e8c20489a64659d28a30d2, type: 3}
   answerTransform: {fileID: 5897411407412485125}
   isCorrect: 0
+  contentParent: {fileID: 5897411407412485125}
 --- !u!114 &9007350118604652213
 MonoBehaviour:
   m_ObjectHideFlags: 0
