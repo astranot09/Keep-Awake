@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a0938276a2df39a4bb5c1c36963d786e
+guid: 8b67f38cac2a61c42bb10b8dc53ec704
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7425438597007568885
-    second: B_0
+      213: -2539912393448619418
+    second: Soal 9_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: B_0
+      name: Soal 9_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 12
-        width: 244
-        height: 48
+        x: 87
+        y: 421
+        width: 256
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ff6c14ff057c0760800000000000000
-      internalID: 7425438597007568885
+      spriteID: 66202eb922b60ccd0800000000000000
+      internalID: -2539912393448619418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soal 9_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 311
+        width: 41
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eb4d07b37302443ba887fe79ea916b
+      internalID: -1211550525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soal 9_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 221
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881c33b4465fa5641ae44e182fa17cb6
+      internalID: -309981973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soal 9_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 132
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa334a8728956f418286b4c2a20622a
+      internalID: -1856349149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Soal 9_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 41
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aea4a3fdfd33f34688162f8a45a2771
+      internalID: -173576259
       vertices: []
       indices: 
       edges: []
@@ -138,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 338e1d468962eba48b10d54760e57288
+    spriteID: 5b896791bc8ee25469a7c94028266aa6
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +236,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      B_0: 7425438597007568885
+      Soal 9_0: -2539912393448619418
+      Soal 9_1: -1211550525
+      Soal 9_2: -309981973
+      Soal 9_3: -1856349149
+      Soal 9_4: -173576259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

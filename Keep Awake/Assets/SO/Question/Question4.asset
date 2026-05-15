@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Question4
   m_EditorClassIdentifier: 
   questionName: 4
-  questionSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  questionSprite: {fileID: -2839063107433300793, guid: c4092890e67eb3343bcbd03d602facb3, type: 3}
   multipleChoiceDatas:
-  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - AnswerSprite: {fileID: 1484540299, guid: c4092890e67eb3343bcbd03d602facb3, type: 3}
     isAnswer: 0
-  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - AnswerSprite: {fileID: 1750053961, guid: c4092890e67eb3343bcbd03d602facb3, type: 3}
     isAnswer: 1
-  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - AnswerSprite: {fileID: -106472278, guid: c4092890e67eb3343bcbd03d602facb3, type: 3}
     isAnswer: 0
-  - AnswerSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - AnswerSprite: {fileID: 71657042, guid: c4092890e67eb3343bcbd03d602facb3, type: 3}
     isAnswer: 0

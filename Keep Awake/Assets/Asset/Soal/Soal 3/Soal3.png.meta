@@ -116,12 +116,12 @@ TextureImporter:
       name: Soal3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 556
-        height: 79
+        x: 83
+        y: 19
+        width: 452
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e40848f0d17fddb48bb04b287f4956ad
     internalID: 0
     vertices: []
     indices: 
