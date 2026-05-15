@@ -21,11 +21,13 @@ public class AwakeBar : MonoBehaviour
 
     [Header("Timeline")]
     [SerializeField] private PlayableDirector sleepTimeline;
+    [SerializeField] private CanvasGroup canvasGroup; 
 
 
     private void OnEnable()
     {
         GameManager.OnStart += SetUpAwakeBar;
+        canvasGroup.alpha = 0f;
     }
     private void OnDisable()
     {
@@ -35,6 +37,7 @@ public class AwakeBar : MonoBehaviour
     {
         currTime = maxTime;
         isRunning = true;
+        canvasGroup.alpha = 1f;
     }
 
     // Update is called once per frame

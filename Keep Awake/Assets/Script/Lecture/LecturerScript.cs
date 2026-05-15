@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LecturerScript : MonoBehaviour
@@ -23,14 +25,19 @@ public class LecturerScript : MonoBehaviour
     [Header("Notification")]
     [SerializeField] private GameObject lectureNotification;
 
+
+    public static Action LectureAngry;
+
     private void OnEnable()
     {
         GameManager.OnStart += LectureSetUp;
+        LectureAngry += PlayerGotNoticed;
     }
 
     private void OnDisable()
     {
         GameManager.OnStart -= LectureSetUp;
+        LectureAngry -= PlayerGotNoticed;
     }
 
     private void LectureSetUp()
@@ -61,7 +68,7 @@ public class LecturerScript : MonoBehaviour
             lectureNotification.SetActive(false);
 
 
-            float teachingDelay = Random.Range(minTeachingDelay, maxTeachingDelay);
+            float teachingDelay = UnityEngine.Random.Range(minTeachingDelay, maxTeachingDelay);
 
             yield return new WaitForSeconds(teachingDelay);
 
@@ -88,7 +95,7 @@ public class LecturerScript : MonoBehaviour
 
             spriteRenderer.color = Color.red;
 
-            float lookingDelay = Random.Range(minLookingDelay, maxLookingDelay);
+            float lookingDelay = UnityEngine.Random.Range(minLookingDelay, maxLookingDelay);
 
             float timer = 0f;
 
@@ -97,7 +104,7 @@ public class LecturerScript : MonoBehaviour
                 // Player tidak fokus
                 if (!Player.instance.ReturnConcetrate())
                 {
-                    LectureAngry();
+                    LectureAngry?.Invoke();
                     SoundManager.instance.PlaySFX(SoundManager.instance.tableSlap);
 
                     yield return new WaitForSeconds(0.3f);
@@ -112,7 +119,7 @@ public class LecturerScript : MonoBehaviour
         }
     }
 
-    public void LectureAngry()
+    public void PlayerGotNoticed()
     {
         Debug.Log("Ketahuan");
     }

@@ -22,16 +22,21 @@ public class CameraManager : MonoBehaviour
     [Header("ButtonUI")]
     [SerializeField] private GameObject buttonScene1;
     [SerializeField] private GameObject buttonScene2;
-
+    [SerializeField] private CanvasGroup buttonGroup;
 
     private void OnEnable()
     {
         GameManager.OnStart += FollowScene1;
+        GameManager.OnStart += SetUpButton;
+        LecturerScript.LectureAngry += FollowScene1;
+        buttonGroup.alpha = 0f;
     }
 
     private void OnDisable()
     {
         GameManager.OnStart -= FollowScene1;
+        GameManager.OnStart -= SetUpButton;
+        LecturerScript.LectureAngry -= FollowScene1;
     }
 
     public void FollowScene1()
@@ -53,5 +58,10 @@ public class CameraManager : MonoBehaviour
         Player.instance.OpenUI();
         Player.instance.NotConcetrate();
         FriendManager.instance.TalkToFriend();
+    }
+
+    public void SetUpButton()
+    {
+        buttonGroup.alpha = 1f;
     }
 }

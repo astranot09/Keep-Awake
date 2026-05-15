@@ -18,11 +18,13 @@ public class TaskManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnStart += SetUpTask;
+        LecturerScript.LectureAngry += CloseTask;
     }
 
     private void OnDisable()
     {
         GameManager.OnStart -= SetUpTask;
+        LecturerScript.LectureAngry -= CloseTask;
     }
 
     [SerializeField] private GameObject taskPanel;
@@ -44,7 +46,9 @@ public class TaskManager : MonoBehaviour
         if (alreadySetUp) return;
         alreadySetUp = true;
         questionData = QuestionDatabase.instance.ReturnQuestionData();
+        OpenTaskWithoutSound();
         SpawnTask();
+        CloseTask();
     }
 
     public void SpawnTask()
@@ -58,15 +62,20 @@ public class TaskManager : MonoBehaviour
         }
     }
 
+    public void OpenTaskWithoutSound()
+    {
+        if (Player.instance.ReturnOpenUI() && !taskPanel.activeSelf) return;
+        else if (!taskPanel.activeSelf)
+        {
+            taskPanel.SetActive(true);
+            Player.instance.OpenUI();
+        }
 
+        SetUpTask();
+    }
     public void OpenTask()
     {
         if (Player.instance.ReturnOpenUI() && !taskPanel.activeSelf) return;
-        if (taskPanel.activeSelf)
-        {
-            taskPanel.SetActive(false);
-            Player.instance.CloseUI();
-        }
         else if (!taskPanel.activeSelf)
         {
             SoundManager.instance.PlaySFX(SoundManager.instance.pickUpPaper);
@@ -74,6 +83,18 @@ public class TaskManager : MonoBehaviour
             Player.instance.OpenUI();
         }
 
+        SetUpTask();
+    }
+
+
+    public void CloseTask()
+    {
+        if (Player.instance.ReturnOpenUI() && !taskPanel.activeSelf) return;
+        if (taskPanel.activeSelf)
+        {
+            taskPanel.SetActive(false);
+            Player.instance.CloseUI();
+        }
         SetUpTask();
     }
 

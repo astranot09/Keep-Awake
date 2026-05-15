@@ -32,10 +32,12 @@ public class FriendManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnStart += ResetTrigger;
+        LecturerScript.LectureAngry += StopTalking;
     }
     private void OnDisable()
     {
         GameManager.OnStart -= ResetTrigger;
+        LecturerScript.LectureAngry -= StopTalking;
     }
 
     private void Update()

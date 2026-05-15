@@ -11,7 +11,21 @@ public class PhoneScript : MonoBehaviour
 
     [Header("Phone")]
     [SerializeField] private GameObject phonePanel;
+    [SerializeField] private SpriteRenderer phoneRenderer;
 
+    private void Awake()
+    {
+        GameManager.OnStart += PhoneSpawn;
+        LecturerScript.LectureAngry += PhoneClose;
+        // awal invisible
+        phoneRenderer.enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnStart -= PhoneSpawn;
+        LecturerScript.LectureAngry -= PhoneClose;
+    }
 
     public void OpenScrolling()
     {
@@ -38,22 +52,30 @@ public class PhoneScript : MonoBehaviour
     {
         OpenPanel(homePagePanel);
     }
-    public void Phone()
+    public void PhoneOpen()
     {
         if (!GameManager.instance.onGame) return;
         if (Player.instance.ReturnOpenUI() && !phonePanel.activeSelf) return;
 
+        if (!phonePanel.activeSelf)
+        {
+            phonePanel.SetActive(true);
+            Player.instance.OpenUI();
+            Player.instance.NotConcetrate();
+            phoneRenderer.enabled = false;
+        }
+    }
+
+    public void PhoneClose()
+    {
+        if (!GameManager.instance.onGame) return;
+        if (Player.instance.ReturnOpenUI() && !phonePanel.activeSelf) return;
         if (phonePanel.activeSelf)
         {
             phonePanel.SetActive(false);
             Player.instance.CloseUI();
             Player.instance.OnConcetrate();
-        }
-        else if (!phonePanel.activeSelf)
-        {
-            phonePanel.SetActive(true);
-            Player.instance.OpenUI();
-            Player.instance.NotConcetrate();
+            phoneRenderer.enabled = true;
         }
     }
 
@@ -73,7 +95,10 @@ public class PhoneScript : MonoBehaviour
     }
 
 
-
+    public void PhoneSpawn()
+    {
+        phoneRenderer.enabled = true;
+    }
 
 
 
@@ -81,7 +106,7 @@ public class PhoneScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Phone();
+        PhoneOpen();
     }
 
 }

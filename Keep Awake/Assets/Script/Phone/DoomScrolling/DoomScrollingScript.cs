@@ -6,6 +6,15 @@ public class DoomScrollingScript : MonoBehaviour
 
 
     [SerializeField] private float addAwake = 2;
+
+    private void OnEnable()
+    {
+        LecturerScript.LectureAngry += CloseDoomScrolling;
+    }
+    private void OnDisable()
+    {
+        LecturerScript.LectureAngry -= CloseDoomScrolling;
+    }
     void Update()
     {
         if (isDoomScrolling)

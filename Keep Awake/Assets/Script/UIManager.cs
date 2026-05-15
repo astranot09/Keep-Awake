@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
 
 
     [SerializeField] private TMP_Text timerText;
+    [SerializeField] private CanvasGroup timerGroup;
+
     [SerializeField] private Slider awakeBar;
 
 
@@ -32,6 +34,17 @@ public class UIManager : MonoBehaviour
 
 
     [SerializeField] private GameObject mainMenuConfirmation;
+
+
+    private void OnEnable()
+    {
+        GameManager.OnStart += TimerSetUp;
+        timerGroup.alpha = 0f;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnStart -= TimerSetUp;
+    }
 
 
 
@@ -81,7 +94,10 @@ public class UIManager : MonoBehaviour
         mainMenuConfirmation.SetActive(false);
     }
 
-
+    private void TimerSetUp()
+    {
+        timerGroup.alpha = 1f;
+    }
 
 
 
