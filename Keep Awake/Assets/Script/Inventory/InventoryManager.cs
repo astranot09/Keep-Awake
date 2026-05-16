@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemSO itemSO)
     {
-        if (itemSOs.Count > 4) return;
+        if (itemSOs.Count >= 4) return;
         itemSOs.Add(itemSO);
         InventoryUI.instance.RefreshUI();
     }
