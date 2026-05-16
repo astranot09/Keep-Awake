@@ -6,6 +6,7 @@ public class DoomScrollingScript : MonoBehaviour
 
 
     [SerializeField] private float addAwake = 2;
+    [SerializeField] private float speedUp = 2;
 
 
     [SerializeField] private ScrollingContentButton scrollingContent;
@@ -29,7 +30,7 @@ public class DoomScrollingScript : MonoBehaviour
     public void DoomScrolling()
     {
         isDoomScrolling = true;
-        TimerManager.instance.SpeedUp(2);
+        TimerManager.instance.SpeedUp(speedUp);
     }
 
     public void CloseDoomScrolling()

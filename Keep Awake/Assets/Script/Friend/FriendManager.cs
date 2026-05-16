@@ -16,7 +16,7 @@ public class FriendManager : MonoBehaviour
 
 
     public bool isTalking = false;
-
+    [SerializeField] private float addAwake;
     [Header("Giving Item")]
     [SerializeField] private float minTrigger = 3f;
     [SerializeField] private float maxTrigger = 8f;
@@ -44,7 +44,7 @@ public class FriendManager : MonoBehaviour
     {
         if (!isTalking) return;
 
-        AwakeBar.instance.AddAwake(2);
+        AwakeBar.instance.AddAwake(addAwake);
 
         if (currTrigger > 0)
         {

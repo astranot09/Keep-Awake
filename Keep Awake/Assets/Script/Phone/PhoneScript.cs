@@ -13,6 +13,8 @@ public class PhoneScript : MonoBehaviour
     [SerializeField] private GameObject phonePanel;
     [SerializeField] private SpriteRenderer phoneRenderer;
 
+    [SerializeField] private DoomScrollingScript doomScrollingScript;
+
 
     private bool openSetting;
 
@@ -68,6 +70,10 @@ public class PhoneScript : MonoBehaviour
                 openSetting = false;
                 settingPanel.SetActive(true);
             }
+            if (scrollingPanel.activeSelf)
+            {
+                doomScrollingScript.DoomScrolling();
+            }
             Player.instance.OpenUI();
             Player.instance.NotConcetrate();
             phoneRenderer.enabled = false;
@@ -85,6 +91,10 @@ public class PhoneScript : MonoBehaviour
             {
                 openSetting = true;
                 settingPanel.SetActive(false);
+            }
+            if (scrollingPanel.activeSelf)
+            {
+                doomScrollingScript.CloseDoomScrolling();
             }
             Player.instance.CloseUI();
             Player.instance.OnConcetrate();

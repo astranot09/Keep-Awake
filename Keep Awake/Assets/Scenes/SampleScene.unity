@@ -2843,8 +2843,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38922918, y: 0.81274086}
   m_AnchorMax: {x: 0.61200005, y: 0.9092964}
-  m_AnchoredPosition: {x: -1, y: 1}
-  m_SizeDelta: {x: 0.3203125, y: -2.325798}
+  m_AnchoredPosition: {x: 0, y: 7}
+  m_SizeDelta: {x: 0, y: -2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &418119475
 MonoBehaviour:
@@ -4281,6 +4281,7 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 981642397}
   phonePanel: {fileID: 1973492122}
   phoneRenderer: {fileID: 713389648}
+  doomScrollingScript: {fileID: 981642403}
 --- !u!212 &713389648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6225,7 +6226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDoomScrolling: 0
-  addAwake: 2
+  addAwake: 5
+  speedUp: 10
   scrollingContent: {fileID: 1135009798}
 --- !u!1 &985747484
 GameObject:
@@ -11846,6 +11848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTalking: 0
+  addAwake: 2
   minTrigger: 5
   maxTrigger: 10
   currTrigger: 0
