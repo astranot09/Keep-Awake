@@ -76,5 +76,10 @@ public class AwakeBar : MonoBehaviour
         if (currTime > maxTime)
             currTime = maxTime;
     }
-
+    public void MinesAwakeInstan(float x)
+    {
+        currTime -= x;
+        if (currTime <= 0)
+            currTime = 0.5f;
+    }
 }

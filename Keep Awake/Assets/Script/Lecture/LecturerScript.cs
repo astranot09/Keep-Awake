@@ -25,6 +25,10 @@ public class LecturerScript : MonoBehaviour
     [Header("Notification")]
     [SerializeField] private GameObject lectureNotification;
 
+    [Header("Lecture Angry")]
+    [SerializeField] private float timeMines;
+    [SerializeField] private float awakeAdd;
+
 
     [SerializeField] private Animator animator;
 
@@ -127,7 +131,8 @@ public class LecturerScript : MonoBehaviour
 
     public void PlayerGotNoticed()
     {
-        Debug.Log("Ketahuan");
+        AwakeBar.instance.AddAwakeInstan(awakeAdd);
+        TimerManager.instance.MinesTime(timeMines);
     }
 
 }

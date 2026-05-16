@@ -71,4 +71,12 @@ public class TimerManager : MonoBehaviour
         isRunning = false;
         return currTime;
     }
+
+    public void MinesTime(float x)
+    {
+        currTime -= x;
+        if (currTime <= 0)
+            currTime = 0.5f;
+    }
+
 }
