@@ -40,7 +40,6 @@ public class PhoneScript : MonoBehaviour
     public void OpenInternet()
     {
         OpenPanel(internetPanel);
-        AnswerKeyManager.instance.SetUp();
     }
 
     public void OpenSetting()
