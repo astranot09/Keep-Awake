@@ -19,7 +19,8 @@ public class MainMenuScript : MonoBehaviour
 
     [SerializeField] private PlayableDirector openingTimeline;
 
-//    [SerializeField] private GameObject settingPanel;
+    //[SerializeField] private GameObject mainMenuPanel;
+    //[SerializeField] private GameObject settingPanel;
 
 
     public void PlayTimeline()
@@ -29,6 +30,7 @@ public class MainMenuScript : MonoBehaviour
 
     //public void OpenSetting()
     //{
+    //    mainMenuPanel.SetActive(!mainMenuPanel.activeSelf);
     //    settingPanel.SetActive(!settingPanel.activeSelf);
     //}
 }

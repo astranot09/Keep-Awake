@@ -30,7 +30,7 @@ public class TaskPrefab : MonoBehaviour
 
     public void SpawnTask()
     {
-        title.text = data.name;
+        title.text = data.questionName;
         question.sprite = data.questionSprite;
 
         foreach (MultipleChoiceData multipleChoice in data.multipleChoiceDatas)

@@ -7,6 +7,9 @@ public class DoomScrollingScript : MonoBehaviour
 
     [SerializeField] private float addAwake = 2;
 
+
+    [SerializeField] private ScrollingContentButton scrollingContent;
+
     private void OnEnable()
     {
         LecturerScript.LectureAngry += CloseDoomScrolling;
@@ -33,5 +36,6 @@ public class DoomScrollingScript : MonoBehaviour
     {
         isDoomScrolling = false;
         TimerManager.instance.BackNormal();
+        scrollingContent.StartIndex();
     }
 }

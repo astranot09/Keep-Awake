@@ -62,7 +62,7 @@ public class AnswerKeyPrefab : MonoBehaviour
         maxTime = max;
         currTime = 0;
 
-        index.text = x.name;
+        index.text = x.questionName;
         keyAnswer.sprite = answerSprite;
 
         ProgressTime();

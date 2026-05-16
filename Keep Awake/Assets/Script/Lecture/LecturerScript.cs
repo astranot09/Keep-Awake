@@ -26,7 +26,11 @@ public class LecturerScript : MonoBehaviour
     [SerializeField] private GameObject lectureNotification;
 
 
+    [SerializeField] private Animator animator;
+
     public static Action LectureAngry;
+
+
 
     private void OnEnable()
     {
@@ -69,6 +73,7 @@ public class LecturerScript : MonoBehaviour
 
 
             float teachingDelay = UnityEngine.Random.Range(minTeachingDelay, maxTeachingDelay);
+            animator.SetBool("isLooking",false);
 
             yield return new WaitForSeconds(teachingDelay);
 
@@ -78,7 +83,7 @@ public class LecturerScript : MonoBehaviour
             // ====================
 
 
-            spriteRenderer.color = Color.yellow;
+            //spriteRenderer.color = Color.yellow;
             lectureNotification.SetActive(true);
 
             yield return new WaitForSeconds(1f);
@@ -93,8 +98,8 @@ public class LecturerScript : MonoBehaviour
 
             Debug.Log("Guru nengok");
 
-            spriteRenderer.color = Color.red;
-
+            //spriteRenderer.color = Color.red;
+            animator.SetBool("isLooking", true);
             float lookingDelay = UnityEngine.Random.Range(minLookingDelay, maxLookingDelay);
 
             float timer = 0f;
@@ -106,7 +111,8 @@ public class LecturerScript : MonoBehaviour
                 {
                     LectureAngry?.Invoke();
                     SoundManager.instance.PlaySFX(SoundManager.instance.tableSlap);
-
+                    yield return new WaitForSeconds(0.3f);
+                    SoundManager.instance.PlaySFX(SoundManager.instance.mad);
                     yield return new WaitForSeconds(0.3f);
                     // langsung balik ke teaching
                     break;
@@ -123,6 +129,5 @@ public class LecturerScript : MonoBehaviour
     {
         Debug.Log("Ketahuan");
     }
-
 
 }

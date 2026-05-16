@@ -67,10 +67,12 @@ public class FriendManager : MonoBehaviour
     {
         ResetTrigger();
         isTalking = true;
+        SoundManager.instance.PlayLongSFX(SoundManager.instance.talkingQuiet);
     }
     public void StopTalking()
     {
         isTalking = false;
+        SoundManager.instance.StopLongSFX();
     }
 
     private void GachaSystem()

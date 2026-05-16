@@ -28,10 +28,14 @@ public class SoundManager : MonoBehaviour
     public AudioClip pickUpPaper;
     public AudioClip tableSlap;
 
+    public AudioClip mad;
+    public AudioClip talkingQuiet;
+
     private void Start()
     {
         PlayBGM(bgmSound);
     }
+
 
     public void PlayBGM(AudioClip bgm)
     {
@@ -47,5 +51,17 @@ public class SoundManager : MonoBehaviour
     {
         SFX.PlayOneShot(sfx);
     }
-
+    public void PlayLongSFX(AudioClip sfx)
+    {
+        SFX.clip = sfx;
+        SFX.Play();
+        SFX.loop = true;
+    }
+    public void StopLongSFX()
+    {
+        if (SFX != null)
+        {
+            SFX.Stop();
+        }
+    }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Coffee
   m_EditorClassIdentifier: 
   itemName: Cofee
-  itemSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  itemSprite: {fileID: 8538707832862292057, guid: f591a8a0e1611ea449872ceaa138aefa, type: 3}
   addAwake: 5

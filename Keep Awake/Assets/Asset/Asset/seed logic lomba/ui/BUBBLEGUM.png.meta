@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: daa793dba713ce2409ffbd6367f8d1a1
+guid: d1a543acf769a264aa67d45e035ea9c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4093529123795720158
-    second: frame1_0
+      213: 7970009462073789390
+    second: BUBBLEGUM_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frame1_0
+      name: BUBBLEGUM_0
       rect:
         serializedVersion: 2
-        x: 466
+        x: 0
         y: 0
-        width: 745
-        height: 796
+        width: 302
+        height: 295
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed75f85bc032fc830800000000000000
-      internalID: 4093529123795720158
+      spriteID: ecb096bf0692b9e60800000000000000
+      internalID: 7970009462073789390
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      frame1_0: 4093529123795720158
+      BUBBLEGUM_0: 7970009462073789390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

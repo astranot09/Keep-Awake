@@ -13,6 +13,9 @@ public class PhoneScript : MonoBehaviour
     [SerializeField] private GameObject phonePanel;
     [SerializeField] private SpriteRenderer phoneRenderer;
 
+
+    private bool openSetting;
+
     private void Awake()
     {
         GameManager.OnStart += PhoneSpawn;
@@ -60,6 +63,11 @@ public class PhoneScript : MonoBehaviour
         if (!phonePanel.activeSelf)
         {
             phonePanel.SetActive(true);
+            if (openSetting)
+            {
+                openSetting = false;
+                settingPanel.SetActive(true);
+            }
             Player.instance.OpenUI();
             Player.instance.NotConcetrate();
             phoneRenderer.enabled = false;
@@ -73,6 +81,11 @@ public class PhoneScript : MonoBehaviour
         if (phonePanel.activeSelf)
         {
             phonePanel.SetActive(false);
+            if (settingPanel.activeSelf)
+            {
+                openSetting = true;
+                settingPanel.SetActive(false);
+            }
             Player.instance.CloseUI();
             Player.instance.OnConcetrate();
             phoneRenderer.enabled = true;

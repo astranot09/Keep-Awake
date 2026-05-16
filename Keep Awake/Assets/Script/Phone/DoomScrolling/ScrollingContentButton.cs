@@ -17,4 +17,10 @@ public class ScrollingContentButton : MonoBehaviour
         }
         _animator.SetInteger("index", index);
     }
+
+    public void StartIndex()
+    {
+        index = 1;
+    }
+
 }

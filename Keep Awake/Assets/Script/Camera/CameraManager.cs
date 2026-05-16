@@ -41,6 +41,7 @@ public class CameraManager : MonoBehaviour
 
     public void FollowScene1()
     {
+        Debug.Log("Balik");
         cinemachineCamera.Follow = scene1;
         buttonScene1.SetActive(true);
         buttonScene2.SetActive(false);
@@ -52,6 +53,7 @@ public class CameraManager : MonoBehaviour
     public void FollowScene2()
     {
         if(Player.instance.ReturnOpenUI()) return;
+        Debug.Log("Ngobrol");
         cinemachineCamera.Follow = scene2;
         buttonScene2.SetActive(true);
         buttonScene1.SetActive(false);

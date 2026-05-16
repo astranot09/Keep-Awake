@@ -135,3 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   answerButton: {fileID: 4149781375283286289}
   answerImage: {fileID: 1647301803198255718}
+  isCorrect: 0
