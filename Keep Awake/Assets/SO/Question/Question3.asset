@@ -19,7 +19,7 @@ MonoBehaviour:
     isAnswer: 0
   - AnswerSprite: {fileID: 7425438597007568885, guid: a0938276a2df39a4bb5c1c36963d786e, type: 3}
     isAnswer: 0
-  - AnswerSprite: {fileID: -606033477821260893, guid: bcfc9cdb8b4e1224e9b1220859fdeec4, type: 3}
-    isAnswer: 1
   - AnswerSprite: {fileID: -962488092458481032, guid: 78d34050f07e1ce40930630ef75e0a54, type: 3}
     isAnswer: 0
+  - AnswerSprite: {fileID: -606033477821260893, guid: bcfc9cdb8b4e1224e9b1220859fdeec4, type: 3}
+    isAnswer: 1

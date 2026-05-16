@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Buble Gum
   itemSprite: {fileID: 7970009462073789390, guid: d1a543acf769a264aa67d45e035ea9c6, type: 3}
-  addAwake: 3
+  addAwake: 5

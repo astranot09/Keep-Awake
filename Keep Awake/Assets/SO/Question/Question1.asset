@@ -17,9 +17,9 @@ MonoBehaviour:
   multipleChoiceDatas:
   - AnswerSprite: {fileID: -8680797543115379092, guid: faa1d360500a9d6469acf339e3841f3e, type: 3}
     isAnswer: 0
-  - AnswerSprite: {fileID: 7425438597007568885, guid: 95c9f32c552208b46a7e5300eb923e4a, type: 3}
-    isAnswer: 0
   - AnswerSprite: {fileID: -606033477821260893, guid: bbecea35e352f764cb4a1962cc77236e, type: 3}
     isAnswer: 1
+  - AnswerSprite: {fileID: 7425438597007568885, guid: 95c9f32c552208b46a7e5300eb923e4a, type: 3}
+    isAnswer: 0
   - AnswerSprite: {fileID: -962488092458481032, guid: 9020927d0efb3504a945514dad425824, type: 3}
     isAnswer: 0

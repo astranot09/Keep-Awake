@@ -4085,13 +4085,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ffad0559375fe48966bc14336930e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTeachingDelay: 3
-  maxTeachingDelay: 7
+  minTeachingDelay: 5
+  maxTeachingDelay: 10
   minLookingDelay: 2
-  maxLookingDelay: 4
+  maxLookingDelay: 7
   isTeaching: 0
   isLooking: 0
   lectureNotification: {fileID: 1065723425}
+  timeMines: 15
+  awakeAdd: 5
   animator: {fileID: 691527266}
 --- !u!212 &691527262
 SpriteRenderer:
@@ -6227,7 +6229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDoomScrolling: 0
   addAwake: 5
-  speedUp: 10
+  speedUp: 4
   scrollingContent: {fileID: 1135009798}
 --- !u!1 &985747484
 GameObject:
@@ -11848,11 +11850,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTalking: 0
-  addAwake: 2
-  minTrigger: 5
-  maxTrigger: 10
+  addAwake: 3
+  minTrigger: 2
+  maxTrigger: 5
   currTrigger: 0
-  gachaRate: 100
+  gachaRate: 30
   item: {fileID: 11400000, guid: d3423e967fec37b48bf2317c858ec7f6, type: 2}
 --- !u!212 &2028621017
 SpriteRenderer:

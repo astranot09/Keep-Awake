@@ -679,7 +679,7 @@ MonoBehaviour:
   pauseSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   doneSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   currTime: 0
-  maxTime: 10
+  maxTime: 30
   searching: 0
   done: 0
 --- !u!1 &8581437951668303397

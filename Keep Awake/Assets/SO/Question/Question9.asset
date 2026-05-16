@@ -15,11 +15,11 @@ MonoBehaviour:
   questionName: 'No 9 '
   questionSprite: {fileID: -2539912393448619418, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
   multipleChoiceDatas:
-  - AnswerSprite: {fileID: -1211550525, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
-    isAnswer: 0
-  - AnswerSprite: {fileID: -309981973, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
-    isAnswer: 0
   - AnswerSprite: {fileID: -1856349149, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
     isAnswer: 1
+  - AnswerSprite: {fileID: -309981973, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
+    isAnswer: 0
+  - AnswerSprite: {fileID: -1211550525, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
+    isAnswer: 0
   - AnswerSprite: {fileID: -173576259, guid: 8b67f38cac2a61c42bb10b8dc53ec704, type: 3}
     isAnswer: 0
